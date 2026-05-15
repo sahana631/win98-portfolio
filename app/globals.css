@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --win98-desktop: #008080;
+  --win98-gray: #c0c0c0;
+  --win98-navy: #000080;
+  --win98-navy-light: #1084d0;
+  --win98-text: #000000;
+  --win98-white: #ffffff;
+  --win98-dark: #808080;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, system-ui, sans-serif;
+  font-size: 11px;
+  color: var(--win98-text);
+  overflow: hidden;
+}
+
+.win98-raised {
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+}
+
+.win98-sunken {
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.win98-inset {
+  border: 1px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.win98-title {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: white;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 3px 4px;
+}
+
+.win98-btn {
+  background: var(--win98-gray);
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  font-family: Arial, system-ui, sans-serif;
+  font-size: 11px;
+  padding: 2px 8px;
+  cursor: pointer;
+  min-width: 22px;
+  min-height: 22px;
+}
+
+.win98-btn:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.win98-btn:disabled {
+  color: #808080;
+  cursor: default;
+}
+
+.mono {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+}
+
+@keyframes boot-progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes bottom-sheet-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
