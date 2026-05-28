@@ -20,7 +20,7 @@ export function AboutWindow() {
           <div style={{ fontWeight: 'bold', fontSize: 16, marginBottom: 6 }}>Sahana Swaminathan</div>
           <div style={{ color: '#444', fontSize: 13, marginBottom: 8 }}>Software Engineer</div>
           <div style={{ fontSize: 13, lineHeight: 1.7 }}>
-            Hi, I&apos;m Sahana — a software engineer with 3 years of experience at Microsoft
+            Hi, I&apos;m Sahana, a software engineer with 3 years of experience at Microsoft
             building enterprise-scale systems used by customers globally. I&apos;m passionate about
             clean APIs, great UX, and delightful little easter eggs. Currently open to new
             opportunities.

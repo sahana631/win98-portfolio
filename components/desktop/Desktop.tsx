@@ -48,9 +48,9 @@ export function Desktop() {
   const [everOpened, setEverOpened] = useState<Set<WindowId>>(new Set());
 
   const handleOpen = useCallback(
-    (id: WindowId) => {
+    (id: WindowId, pos?: { x: number; y: number }) => {
       const size = initSizes[id] ?? initSizes['projects'];
-      openWindow(id, size.w, size.h);
+      openWindow(id, size.w, size.h, pos?.x, pos?.y);
       setEverOpened((prev) => {
         const next = new Set(prev);
         next.add(id);
@@ -60,7 +60,12 @@ export function Desktop() {
     [openWindow],
   );
 
-  useEffect(() => { handleOpen('about'); }, [handleOpen]);
+  useEffect(() => {
+    const { w, h } = initSizes['about'];
+    const x = Math.round((window.innerWidth - w) / 2);
+    const y = Math.round((window.innerHeight - 30 - h) / 2); // 30px taskbar
+    handleOpen('about', { x, y });
+  }, [handleOpen]);
 
   const allMainOpened = MAIN_WINDOWS.every((id) => everOpened.has(id));
 

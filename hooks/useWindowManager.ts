@@ -17,7 +17,7 @@ export interface WindowState {
 interface UseWindowManagerResult {
   windows: WindowState[];
   openedIds: Set<WindowId>;
-  openWindow: (id: WindowId, initWidth?: number, initHeight?: number) => void;
+  openWindow: (id: WindowId, initWidth?: number, initHeight?: number, initX?: number, initY?: number) => void;
   closeWindow: (id: WindowId) => void;
   minimizeWindow: (id: WindowId) => void;
   restoreWindow: (id: WindowId) => void;
@@ -36,7 +36,7 @@ export function useWindowManager(): UseWindowManagerResult {
 
   const openedIds = new Set(windows.map((w) => w.id));
 
-  const openWindow = useCallback((id: WindowId, initWidth = 480, initHeight = 300) => {
+  const openWindow = useCallback((id: WindowId, initWidth = 480, initHeight = 300, initX?: number, initY?: number) => {
     setWindows((prev) => {
       if (prev.find((w) => w.id === id)) {
         zCounter.current += 1;
@@ -49,7 +49,7 @@ export function useWindowManager(): UseWindowManagerResult {
       openCount.current += 1;
       return [
         ...prev,
-        { id, minimized: false, zIndex: zCounter.current, x: offset, y: offset, width: initWidth, height: initHeight },
+        { id, minimized: false, zIndex: zCounter.current, x: initX ?? offset, y: initY ?? offset, width: initWidth, height: initHeight },
       ];
     });
   }, []);
