@@ -17,9 +17,9 @@ export function AboutWindow() {
           }}
         />
         <div>
-          <div style={{ fontWeight: 'bold', fontSize: 13, marginBottom: 4 }}>Sahana Swaminathan</div>
-          <div style={{ color: '#444', marginBottom: 6 }}>Software Engineer</div>
-          <div style={{ lineHeight: 1.6 }}>
+          <div style={{ fontWeight: 'bold', fontSize: 16, marginBottom: 6 }}>Sahana Swaminathan</div>
+          <div style={{ color: '#444', fontSize: 13, marginBottom: 8 }}>Software Engineer</div>
+          <div style={{ fontSize: 13, lineHeight: 1.7 }}>
             Hi, I&apos;m Sahana — a software engineer with 3 years of experience at Microsoft
             building enterprise-scale systems used by customers globally. I&apos;m passionate about
             clean APIs, great UX, and delightful little easter eggs. Currently open to new
@@ -28,16 +28,16 @@ export function AboutWindow() {
         </div>
       </div>
       <div>
-        <div style={{ fontWeight: 'bold', marginBottom: 6 }}>Technologies</div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+        <div style={{ fontWeight: 'bold', fontSize: 13, marginBottom: 8 }}>Technologies</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
           {tags.map((tag) => (
             <span
               key={tag}
               style={{
                 background: 'var(--win98-navy)',
                 color: 'white',
-                padding: '1px 6px',
-                fontSize: 11,
+                padding: '3px 8px',
+                fontSize: 12,
               }}
             >
               {tag}

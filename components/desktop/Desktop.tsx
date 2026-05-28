@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useWindowManager, type WindowId } from '@/hooks/useWindowManager';
 import { Window } from '@/components/window/Window';
 import { Taskbar } from '@/components/taskbar/Taskbar';
@@ -26,7 +26,7 @@ const windowMeta: Record<string, { icon: string; label: string }> = {
 };
 
 const initSizes: Record<string, { w: number; h: number }> = {
-  about:    { w: 480, h: 240 },
+  about:    { w: 480, h: 270 },
   projects: { w: 480, h: 300 },
   skills:   { w: 380, h: 340 },
   contact:  { w: 360, h: 240 },
@@ -59,6 +59,8 @@ export function Desktop() {
     },
     [openWindow],
   );
+
+  useEffect(() => { handleOpen('about'); }, [handleOpen]);
 
   const allMainOpened = MAIN_WINDOWS.every((id) => everOpened.has(id));
 
