@@ -15,10 +15,10 @@ AI-assisted workflows to improve engineering productivity at scale.
 
 EXPERIENCE
 ──────────
-Software Engineer                              Jun 2023 – Apr 2026
+Software Engineer                              Jun 2023 – May 2026
 Microsoft Corporation — Redmond, WA
 
-  Dynamics 365 Omnichannel Voice          Oct 2024 – Apr 2026
+  Dynamics 365 Omnichannel Voice          Oct 2024 – May 2026
   • Owned end-to-end delivery of Teams Phone extensibility features,
     deepening integration between Microsoft Teams and Dynamics 365
     Contact Center for enterprise customers globally
