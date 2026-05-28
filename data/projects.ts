@@ -18,5 +18,6 @@ export const projects: Project[] = [
     stack: ['React', 'Node.js', 'PostgreSQL', 'Prisma', 'Groq AI', 'Kroger API'],
     description: 'AI-powered meal planning app with drag-and-drop weekly planning, pantry tracking, smart shopping list consolidation, and one-click Kroger cart sync.',
     github: 'https://github.com/sahana631/cartable',
+    demo: 'https://meal-planner-alpha-flame.vercel.app/',
   },
 ];
