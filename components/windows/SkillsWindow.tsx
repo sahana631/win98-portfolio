@@ -2,17 +2,17 @@ import { skills } from '@/data/skills';
 
 export function SkillsWindow() {
   return (
-    <div className="mono" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-      <div style={{ color: '#555', marginBottom: 4 }}>[skills.ini]</div>
+    <div className="mono" style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 13 }}>
+      <div style={{ color: '#555', marginBottom: 4, fontSize: 12 }}>[skills.ini]</div>
       {skills.map((skill) => (
-        <div key={skill.name} style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <div key={skill.name} style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span>{skill.name}</span>
+            <span style={{ fontWeight: 'bold' }}>{skill.name}</span>
             <span>{skill.level}%</span>
           </div>
           <div
             style={{
-              height: 14,
+              height: 18,
               background: 'white',
               border: '2px solid',
               borderColor: '#808080 #ffffff #ffffff #808080',
